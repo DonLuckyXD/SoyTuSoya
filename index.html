@@ -13,6 +13,10 @@
         href="https://fonts.googleapis.com/css2?family=Long+Cang&family=Nanum+Brush+Script&family=Shojumaru&display=swap"
         rel="stylesheet">
     <style>
+        #ubicaciones {
+            scroll-margin-top: 85px;
+        }
+
         body {
             background: #0d0d0d;
             font-family: sans-serif;
@@ -83,6 +87,15 @@
             text-align: right;
         }
 
+        #clubMoshiModal .form-control::placeholder {
+            color: #b3b3b3 !important; 
+            opacity: 1; 
+        }
+        
+        #clubMoshiModal .form-control:focus {
+            border-color: #f20519 !important;
+            box-shadow: 0 0 0 0.25rem rgba(242, 5, 25, 0.25) !important;
+        }
 
         .carousel-caption {
             backdrop-filter: blur(3px);
@@ -353,6 +366,20 @@
             .card-producto h1 {
                 font-size: 28px;
             }
+
+            #orderModal .modal-body {
+                overflow-y: auto !important;
+                max-height: 85vh; 
+            }
+            #orderModal .col-lg-8,
+            #orderModal .col-lg-4 {
+                max-height: none !important; 
+                overflow: visible !important;
+            }
+            #orderModal .col-lg-4 {
+                border-top: 2px dashed #333; 
+                padding-bottom: 30px !important; 
+            }
         }
     </style>
 </head>
@@ -360,7 +387,7 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
                 <img src="img/logsush3.png" loading="lazy" style="height: 79px;" />
                 <p id="t1" style="font-family: Shojumaru; font-size: 15px; margin-left: 10px; margin-bottom: 0;">
                     Soytu <br>Soya
@@ -373,10 +400,12 @@
                 <div class="navbar-nav fw-bold">
                     <a href="" style="font-family: Shojumaru;" class="nav-link mx-3" data-bs-toggle="modal"
                         data-bs-target="#orderModal">Haz tu pedido</a>
-                    <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mx-3">Club Moshi</a>
+                    <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mx-3"
+                        data-bs-toggle="modal" data-bs-target="#clubMoshiModal">Club Moshi</a>
                     <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mt-1 mx-3"
-                        data-bs-toggle="modal" data-bs-target="#menuModal">Menú</a> <a href="#"
-                        style="font-family: Shojumaru; font-size: 15px" class="nav-link mt-1 mx-3">Ubicaciones</a>
+                        data-bs-toggle="modal" data-bs-target="#menuModal">Menú</a>
+                    <a href="#ubicaciones" style="font-family: Shojumaru; font-size: 15px"
+                        class="nav-link mt-1 mx-3">Ubicaciones</a>
                     <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mt-1 mx-3">Eventos</a>
                     <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mx-2">Únete al
                         Equipo</a>
@@ -456,69 +485,72 @@
     </div>
 
     <section id="ubicaciones" class="py-5" style="background-color: #0d0d0d;">
-    <div class="container">
-        <h1 class="text-center display-2 mb-5" style="font-family: Shojumaru; color:#f20519;">
-            NUESTRAS <br> SEDES
-        </h1>
+        <div class="container">
+            <h1 class="text-center display-2 mb-5" style="font-family: Shojumaru; color:#f20519;">
+                NUESTRAS SEDES
+            </h1>
 
-        <div class="card card-producto shadow-lg mb-5" style="background: transparent; border: 1px solid #222;">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img src="img/LocalsImg/restau1.webp" class="img-fluid h-100 w-100" style="object-fit: cover; min-height: 350px;" alt="Sede Lagos">
+            <div class="card card-producto shadow-lg mb-5" style="background: transparent; border: 1px solid #222;">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="img/LocalsImg/restau1.webp" class="img-fluid h-100 w-100"
+                            style="object-fit: cover; min-height: 350px;" alt="Sede Lagos">
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center p-4 p-lg-5" style="background: #121212;">
+                        <div>
+                            <h2 style="font-family: Shojumaru; color: #f27405;">Lagos de Moreno</h2>
+                            <p class="text-white mt-4" style="font-family: Long Cang; font-size: 22px;">
+                                📍 Calle Real de Japón #123, Centro Histórico.<br>
+                                📞 +52 474 123 4567<br>
+                                ✨ Nuestra sede principal con barra de sushi en vivo.
+                            </p>
+                            <button class="btn btn-outline-danger mt-3 fw-bold rounded-pill px-4">Ver en Mapa</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-center p-4 p-lg-5" style="background: #121212;">
-                    <div>
-                        <h2 style="font-family: Shojumaru; color: #f27405;">Lagos de Moreno</h2>
-                        <p class="text-white mt-4" style="font-family: Long Cang; font-size: 22px;">
-                            📍 Calle Real de Japón #123, Centro Histórico.<br>
-                            📞 +52 474 123 4567<br>
-                            ✨ Nuestra sede principal con barra de sushi en vivo.
-                        </p>
-                        <button class="btn btn-outline-danger mt-3 fw-bold rounded-pill px-4">Ver en Mapa</button>
+            </div>
+
+            <div class="card card-producto shadow-lg mb-5" style="background: transparent; border: 1px solid #222;">
+                <div class="row g-0">
+                    <div class="col-md-6 order-md-2">
+                        <img src="img/LocalsImg/restau2.webp" class="img-fluid h-100 w-100"
+                            style="object-fit: cover; min-height: 350px;" alt="Sede León">
+                    </div>
+                    <div class="col-md-6 order-md-1 d-flex align-items-center p-4 p-lg-5" style="background: #121212;">
+                        <div class="text-md-end w-100">
+                            <h2 style="font-family: Shojumaru; color: #f27405;">León, Gto.</h2>
+                            <p class="text-white mt-4" style="font-family: Long Cang; font-size: 22px;">
+                                📍 Plaza Altacia, Planta Alta Local 45.<br>
+                                📞 +52 477 987 6543<br>
+                                ✨ Un ambiente moderno para tus cenas especiales.
+                            </p>
+                            <button class="btn btn-outline-danger mt-3 fw-bold rounded-pill px-4">Ver en Mapa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-producto shadow-lg mb-5" style="background: transparent; border: 1px solid #222;">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="img/LocalsImg/restau3.webp" class="img-fluid h-100 w-100"
+                            style="object-fit: cover; min-height: 350px;" alt="Sede Guadalajara">
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center p-4 p-lg-5" style="background: #121212;">
+                        <div>
+                            <h2 style="font-family: Shojumaru; color: #f27405;">Guadalajara</h2>
+                            <p class="text-white mt-4" style="font-family: Long Cang; font-size: 22px;">
+                                📍 Av. Chapultepec #88, Colonia Americana.<br>
+                                📞 +52 333 456 7890<br>
+                                ✨ Disfruta de nuestra exclusiva carta de Sakes.
+                            </p>
+                            <button class="btn btn-outline-danger mt-3 fw-bold rounded-pill px-4">Ver en Mapa</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="card card-producto shadow-lg mb-5" style="background: transparent; border: 1px solid #222;">
-            <div class="row g-0">
-                <div class="col-md-6 order-md-2">
-                    <img src="img/LocalsImg/restau2.webp" class="img-fluid h-100 w-100" style="object-fit: cover; min-height: 350px;" alt="Sede León">
-                </div>
-                <div class="col-md-6 order-md-1 d-flex align-items-center p-4 p-lg-5" style="background: #121212;">
-                    <div class="text-md-end w-100">
-                        <h2 style="font-family: Shojumaru; color: #f27405;">León, Gto.</h2>
-                        <p class="text-white mt-4" style="font-family: Long Cang; font-size: 22px;">
-                            📍 Plaza Altacia, Planta Alta Local 45.<br>
-                            📞 +52 477 987 6543<br>
-                            ✨ Un ambiente moderno para tus cenas especiales.
-                        </p>
-                        <button class="btn btn-outline-danger mt-3 fw-bold rounded-pill px-4">Ver en Mapa</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card card-producto shadow-lg mb-5" style="background: transparent; border: 1px solid #222;">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img src="img/LocalsImg/restau3.webp" class="img-fluid h-100 w-100" style="object-fit: cover; min-height: 350px;" alt="Sede Guadalajara">
-                </div>
-                <div class="col-md-6 d-flex align-items-center p-4 p-lg-5" style="background: #121212;">
-                    <div>
-                        <h2 style="font-family: Shojumaru; color: #f27405;">Guadalajara</h2>
-                        <p class="text-white mt-4" style="font-family: Long Cang; font-size: 22px;">
-                            📍 Av. Chapultepec #88, Colonia Americana.<br>
-                            📞 +52 333 456 7890<br>
-                            ✨ Disfruta de nuestra exclusiva carta de Sakes.
-                        </p>
-                        <button class="btn btn-outline-danger mt-3 fw-bold rounded-pill px-4">Ver en Mapa</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
     <h1 class="text-center display-1 mt-5" style="font-family: Shojumaru; color:#f20519;">
@@ -800,7 +832,7 @@
                 </div>
 
                 <div class="modal-footer border-0 justify-content-center">
-                    <a href="#" class="btn btn-danger px-4 fw-bold">
+                    <a href="#" class="btn btn-danger px-4 fw-bold" data-bs-toggle="modal" data-bs-target="#orderModal">
                         Pedir ahora
                     </a>
                 </div>
@@ -1022,7 +1054,7 @@
                 </div>
 
                 <div class="modal-footer border-0 justify-content-center pt-2 pb-4" style="background-color: #0d0d0d;">
-                    <p class="text-muted small" style="letter-spacing: 2px;">*Todos los precios incluyen IVA</p>
+                    <p class="text-white-50 small" style="letter-spacing: 2px;">*Todos los precios incluyen IVA</p>
                 </div>
 
             </div>
@@ -1423,6 +1455,79 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="clubMoshiModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content text-white rounded-4 shadow-lg"
+                style="background-color: #0d0d0d; border: 1px solid #333;">
+
+                <div class="modal-header border-0 pb-0 shadow-sm" style="z-index: 10;">
+                    <h2 class="modal-title fw-bold w-100 text-center mt-3"
+                        style="font-family: Shojumaru; color: #f20519;">
+                        CLUB MOSHI
+                    </h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body p-4 p-md-5">
+                    <div class="row align-items-center">
+                        <div class="col-md-5 text-center mb-4 mb-md-0 position-relative">
+                            <div class="position-absolute top-0 end-0 h-100 d-none d-md-block"
+                                style="border-right: 2px dashed #333;"></div>
+
+                            <img src="img/sushi2.jpg" alt="Club Moshi VIP" class="rounded-circle shadow-lg mb-3"
+                                style="width: 160px; height: 160px; object-fit: cover; border: 3px solid #f27405;">
+
+                            <h4 style="font-family: Nanum Brush Script; font-size: 38px; color: #fff;">Sé un cliente VIP
+                            </h4>
+                            <p class="text-white-50 small mt-2 px-2" style="font-family: sans-serif; font-size: 14px;">
+                                Acumula puntos en cada visita, recibe rollos gratis y celebra tu cumpleaños con postres
+                                exclusivos.
+                            </p>
+                        </div>
+
+                        <div class="col-md-7 ps-md-4">
+                            <h5 class="mb-4 text-center text-md-start"
+                                style="font-family: Shojumaru; color: #f27405; letter-spacing: 2px; font-size: 16px;">
+                                ~ ÚNETE AHORA ~
+                            </h5>
+
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text"
+                                        class="form-control bg-dark text-white border-secondary shadow-none"
+                                        placeholder="Usuario" required style="border-radius: 10px;">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email"
+                                        class="form-control bg-dark text-white border-secondary shadow-none"
+                                        placeholder="Correo Electrónico" required style="border-radius: 10px;">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="password"
+                                        class="form-control bg-dark text-white border-secondary shadow-none"
+                                        placeholder="contraseña" required style="border-radius: 10px;">
+                                </div>
+
+                                <button type="button" class="btn w-100 py-2 fw-bold text-white shadow"
+                                    style="background-color: #f20519; font-family: sans-serif; letter-spacing: 1px; border-radius: 30px; transition: 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.05)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                                    QUIERO SER MOSHI
+                                </button>
+
+                                <p class="text-center text-secondary mt-3 mb-0"
+                                    style="font-family: sans-serif; font-size: 11px;">
+                                    Al unirte aceptas nuestros términos y políticas de recompensas.
+                                </p>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
