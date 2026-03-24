@@ -17,6 +17,14 @@
             scroll-margin-top: 85px;
         }
 
+        .accordion-button::after {
+            filter: invert(1);
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: invert(1);
+        }
+
         body {
             background: #0d0d0d;
             font-family: sans-serif;
@@ -88,10 +96,10 @@
         }
 
         #clubMoshiModal .form-control::placeholder {
-            color: #b3b3b3 !important; 
-            opacity: 1; 
+            color: #b3b3b3 !important;
+            opacity: 1;
         }
-        
+
         #clubMoshiModal .form-control:focus {
             border-color: #f20519 !important;
             box-shadow: 0 0 0 0.25rem rgba(242, 5, 25, 0.25) !important;
@@ -369,16 +377,18 @@
 
             #orderModal .modal-body {
                 overflow-y: auto !important;
-                max-height: 85vh; 
+                max-height: 85vh;
             }
+
             #orderModal .col-lg-8,
             #orderModal .col-lg-4 {
-                max-height: none !important; 
+                max-height: none !important;
                 overflow: visible !important;
             }
+
             #orderModal .col-lg-4 {
-                border-top: 2px dashed #333; 
-                padding-bottom: 30px !important; 
+                border-top: 2px dashed #333;
+                padding-bottom: 30px !important;
             }
         }
     </style>
@@ -406,15 +416,22 @@
                         data-bs-toggle="modal" data-bs-target="#menuModal">Menú</a>
                     <a href="#ubicaciones" style="font-family: Shojumaru; font-size: 15px"
                         class="nav-link mt-1 mx-3">Ubicaciones</a>
-                    <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mt-1 mx-3">Eventos</a>
-                    <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mx-2">Únete al
-                        Equipo</a>
+                    <a href="#preguntasfr" style="font-family: Shojumaru; font-size: 15px" class="nav-link mt-1 mx-3">Preguntas Frecuentes</a>
+                    <a href="#" style="font-family: Shojumaru; font-size: 15px" class="nav-link mx-2">Únete al equipo</a>
                     <a href="https://soytusoyaold.netlify.app" style="font-family: Shojumaru; font-size: 15px;"
                         class="nav-link mx-2">Versión 1.0 (Anterior)</a>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="container mt-4 position-absolute start-50 translate-middle-x" style="z-index: 1000; max-width: 800px;">
+        <div class="alert alert-dark alert-dismissible fade show border-danger shadow text-center" role="alert"
+            style="border-width: 2px; background-color: rgba(18, 18, 18, 0.95); color: white;">
+            <strong>¡Bienvenido a Soy tu Soya! 🍣</strong> Regístrate en el <strong>Club Moshi</strong> y obtén tu
+            primer postre totalmente GRATIS.
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
     <section class="hero">
         <div class="hero-left">
             <div class="hero-content fade-up">
@@ -747,6 +764,68 @@
         </button>
     </div>
 
+    <section id="preguntasfr" class="container py-5 mt-4 mb-5">
+        <h1 class="text-center display-5 mb-5 fw-bold" style="font-family: Shojumaru; color:#f20519;">
+            PREGUNTAS FRECUENTES
+        </h1>
+        
+        <div class="accordion accordion-flush shadow-lg" id="faqAccordion" style="border: 1px solid #333; border-radius: 15px; overflow: hidden;">
+            
+            <div class="accordion-item bg-dark text-white border-bottom border-secondary">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        <strong style="color: #f27405; font-size: 18px;">¿Tienen opciones veganas o vegetarianas?</strong>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-white-50" style="font-family: sans-serif;">
+                        ¡Sí! Contamos con deliciosos rolls vegetarianos, gyozas de vegetales y ramen a base de miso y verduras frescas. Pregunta a tu mesero por las adaptaciones que podemos hacer en nuestros platillos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-dark text-white border-bottom border-secondary">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        <strong style="color: #f27405; font-size: 18px;">¿Hacen envíos a domicilio?</strong>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-white-50" style="font-family: sans-serif;">
+                        Claro que sí, cubrimos toda la zona central y alrededores en todas nuestras sucursales. Puedes armar tu pedido desde esta misma página dando clic en "Haz tu pedido" o llamando a tu sucursal más cercana.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-dark text-white border-bottom border-secondary">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        <strong style="color: #f27405; font-size: 18px;">¿Se puede reservar para eventos grandes o cumpleaños?</strong>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-white-50" style="font-family: sans-serif;">
+                        ¡Por supuesto! Contáctanos con al menos 48 horas de anticipación para separar tu área en cualquiera de nuestras sedes. Recuerda que si eres parte del <strong>Club Moshi</strong>, el cumpleañero recibe un trato VIP con postre de cortesía.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-dark text-white">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        <strong style="color: #f27405; font-size: 18px;">¿Cuáles son los métodos de pago aceptados?</strong>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-white-50" style="font-family: sans-serif;">
+                        Aceptamos efectivo, todas las tarjetas de crédito/débito (Visa, Mastercard, Amex) y transferencias bancarias. También llevamos terminal inalámbrica para tus pedidos a domicilio para tu mayor comodidad.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <footer class="bg-black text-light mt-5 pt-5 pb-3">
         <div class="container">
             <div class="row">
@@ -877,8 +956,11 @@
                             <img src="img/MenuImg/ramen_pollo.webp" alt="Ramen de pollo especiado"
                                 class="rounded-circle shadow mb-3"
                                 style="width: 140px; height: 140px; object-fit: cover; border: 2px solid #222;">
-                            <h2 style="font-family: Nanum Brush Script; font-size: 38px; color: #fff;">Ramen de pollo
-                                especiado
+                            <h2 style="font-family: Nanum Brush Script; font-size: 38px; color: #fff;">
+                                Ramen de pollo especiado
+                                <span class="badge bg-danger ms-2"
+                                    style="font-family: sans-serif; font-size: 14px; vertical-align: middle;">🔥
+                                    Popular</span>
                             </h2>
                             <p class="mt-3 mb-4" style="color: #aaa; font-size: 15px;">Fideos en caldo claro coronados
                                 con pollo deshebrado marinado y cebollín.</p>
@@ -904,7 +986,11 @@
                             <img src="img/MenuImg/spicytuna.webp" alt="Spicy Tuna Roll"
                                 class="rounded-circle shadow mb-3"
                                 style="width: 140px; height: 140px; object-fit: cover; border: 2px solid #222;">
-                            <h2 style="font-family: Nanum Brush Script; font-size: 45px; color: #fff;">Spicy Tuna Roll
+                            <h2 style="font-family: Nanum Brush Script; font-size: 45px; color: #fff;">
+                                Spicy Tuna Roll
+                                <span class="badge bg-warning text-dark ms-2"
+                                    style="font-family: sans-serif; font-size: 14px; vertical-align: middle;">🌶️
+                                    Picante</span>
                             </h2>
                             <p class="mt-3 mb-4" style="color: #aaa; font-size: 15px;">Atún picante, aguacate y pepino,
                                 cubierto con tempura flakes y salsa de anguila.</p>
@@ -940,7 +1026,12 @@
                         <div class="col-md-4 mb-5 mb-md-0 px-4 position-relative">
                             <img src="img/MenuImg/dragon_roll.webp" alt="Dragon Roll" class="rounded-circle shadow mb-3"
                                 style="width: 140px; height: 140px; object-fit: cover; border: 2px solid #222;">
-                            <h2 style="font-family: Nanum Brush Script; font-size: 45px; color: #fff;">Dragon Roll</h2>
+                            <h2 style="font-family: Nanum Brush Script; font-size: 45px; color: #fff;">
+                                Dragon Roll
+                                <span class="badge bg-success ms-2"
+                                    style="font-family: sans-serif; font-size: 14px; vertical-align: middle;">✨
+                                    Nuevo</span>
+                            </h2>
                             <p class="mt-3 mb-4" style="color: #aaa; font-size: 15px;">Camarón empanizado, queso crema,
                                 cubierto de aguacate, anguila y ajonjolí.</p>
                             <h4 class="fw-bold text-danger">$165.00</h4>
